@@ -91,7 +91,7 @@ void yakserver::handleMessage(int index){
         //send to every other client
         int count = NM.getNumConnections();
         for(int x = 0; x < count; x++){
-            if(x != index && NM.isConnected(x)){
+            if(NM.isConnected(x)){
                 NM.send(&header,sizeof(header),x);
                 NM.send(buffer,length,x);
             }
