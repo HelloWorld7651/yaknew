@@ -13,6 +13,8 @@ To Run:
 1. MAKE
 2. ./server
     In a new Tab run, ./client
+    exit exits the client
+    ./client for each new client you want to open. Server stays up no matter what
 Clean the game:
 1. make clean
 
@@ -21,6 +23,6 @@ are all provided by the professor.
 
 Everything else was code added
 
-Important: I also don't know if windows compatability was added. I only really tested it on mac because I am on mac.I know it works for my mac.
+Important: I also don't know if windows compatability was added. I only really tested it on mac because I am on mac.I know it works for my mac. I also believe my solution on works on local, because I was under the impression we only really need to do local
 
 

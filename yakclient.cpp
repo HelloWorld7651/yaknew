@@ -3,14 +3,7 @@
 #include "EventNetwork.h"
 #include "LogManager.h"
 #include <string>
-/*
-#define yak_port "9876"
-#define message_size 1024
 
-enum class MessageType{
-    UNDEFINED = -1, EXIT, CHAT
-};
-*/
 struct PacketHeader{
     int size; // size of message
     MessageType type; //type of message
@@ -36,7 +29,7 @@ yakclient::yakclient(df::TextBox *box){
     //register interest
     registerInterest(df::NETWORK_EVENT);
 }
-
+//deconstructor
 yakclient::~yakclient(){
     PacketHeader header;
     header.type = MessageType::EXIT;
@@ -78,7 +71,7 @@ void yakclient::handleMessage(){
     if(header.type == MessageType::CHAT){
         //add a new line after each person
         std::string message = std::string(buffer) + "\n";
-        text_box -> addText(buffer);
+        text_box -> addText(message);
     }
 }
 

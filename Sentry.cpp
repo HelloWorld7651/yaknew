@@ -38,7 +38,7 @@ void Sentry::handleStep(){
     for(int x = 0; x < NM.getNumConnections(); x++){
         //socket is valid
         if(NM.isConnected(x)){
-            //how many bytes, we need 4 bytes 
+            //check how many bytes, we need 4 bytes 
             int bytes = NM.isData(x);
             if(bytes>=(sizeof(int))){
                 int msg_size = 0;

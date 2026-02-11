@@ -23,7 +23,7 @@ Input::Input(std::string name, df::TextBox *p_text_box, yakclient *p_client) {
   setLimit(40); // In characters
   m_p_text_box = p_text_box;
   m_p_client = p_client;
-  m_name = name + ": ";
+  m_name = name + " : ";
   setViewString(m_name);
 }
 
@@ -39,17 +39,5 @@ void Input::callback() {
   m_p_client->sendMessage(full_msg);
   //clear input
   setText("");
-  /*
-  // Add name to box.
-  m_p_text_box -> addText(m_name);
 
-  // Get text and add to box.
-  m_p_text_box -> addText(getText());
-
-  // Add newline to box.
-  m_p_text_box -> addText("\n");
-  
-  // Clear for next entry.
-  this -> clearText();
-  */
 }

@@ -1,7 +1,6 @@
 //
 // client.cpp - client interface
 // 
-// System includes.
 
 // Engine includes.
 #include "GameManager.h"
@@ -15,7 +14,6 @@
 // Function protoypes.
 void populateWorld();
 
-///////////////////////////////////////////////
 int main(int argc, char *argv[]) {
 
   // Start up game manager.
