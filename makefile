@@ -1,6 +1,6 @@
 CC=g++
 CFLAGS= -g -std=c++17 -Wall 
-INCLUDES= -I../dragonfly/include
+INCLUDES= -I../dragonfly/include -I/usr/local/include -I/opt/homebrew/include
 LDFLAGS= -L../dragonfly/lib -ldragonfly -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
 
 COMMON= EventNetwork.cpp NetworkManager.cpp Sentry.cpp 

@@ -12,6 +12,7 @@
 #include "Input.h"
 #include "NameEntry.h"
 #include "TextBox.h"
+#include "yakclient.h"
 
 NameEntry::NameEntry() {
   setType("NameEntry");
