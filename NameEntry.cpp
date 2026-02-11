@@ -30,15 +30,19 @@ void NameEntry::callback() {
 
   // Chat input.
   df::TextBox *p_t = new df::TextBox();
-  if (!p_t) {
-    LM.writeLog("populateWorld(): Error! Cannot allocate TextBox.");
-    exit(-1);
-  }
-  p_t -> setSize(df::Vector(40, 15));
-  
-  // Message input.
-  new Input(getText(), p_t);
+  //create box
+  p_t->setSize(df::Vector(40, 15));
+  p_t->setLocation(df::CENTER_CENTER); 
+  p_t->setBorder(true);                
+  p_t->setColor(df::WHITE);
 
+  //create network client
+  yakclient *p_client = new yakclient(p_t);
+
+  //pass client so input can see
+  Input *p_in = new Input(getText(), p_t, p_client);  
+  p_in->setLocation(df::Vector(p_t->getPosition().getX(), p_t->getPosition().getY() + 8));
+  
   // Done.
   WM.markForDelete(this);
 }

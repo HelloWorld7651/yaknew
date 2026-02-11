@@ -46,8 +46,7 @@ void NetworkManager::shutDown(){
 
 
 
-// Setup NetworkManager as server (if false, reset to client).
-// Return 0 if ok, else -1.
+// Setup NetworkManager as server
 int NetworkManager::setServer(bool server, std::string port){
     if(!server){
         //turn off server

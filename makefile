@@ -1,31 +1,26 @@
 CC=g++
-
 CFLAGS= -g -std=c++17 -Wall 
-
 INCLUDES= -I../dragonfly/include
-
 LDFLAGS= -L../dragonfly/lib -ldragonfly -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
 
-SOURCES= chat.cpp \
-         EventNetwork.cpp \
-         Input.cpp \
-         NameEntry.cpp \
-         NetworkManager.cpp \
-         Sentry.cpp \
-         yakclient.cpp \
-         yakserver.cpp
+COMMON= EventNetwork.cpp NetworkManager.cpp Sentry.cpp 
 
-EXECUTABLE=game
+CLIENT_SRC= client.cpp Input.cpp NameEntry.cpp yakclient.cpp $(COMMON)
+CLIENT_OBJ= $(CLIENT_SRC:.cpp=.o)
 
-OBJECTS=$(SOURCES:.cpp=.o)
+SERVER_SRC= server.cpp yakserver.cpp $(COMMON)
+SERVER_OBJ= $(SERVER_SRC:.cpp=.o)
 
-all: $(SOURCES) $(EXECUTABLE)
+all: client server
 
-$(EXECUTABLE): $(OBJECTS)
-	$(CC) $(OBJECTS) -o $@ $(LDFLAGS)
+client: $(CLIENT_OBJ)
+	$(CC) $(CLIENT_OBJ) -o client $(LDFLAGS)
+
+server: $(SERVER_OBJ)
+	$(CC) $(SERVER_OBJ) -o server $(LDFLAGS)
 
 .cpp.o:
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
-	rm -f $(OBJECTS) $(EXECUTABLE) core dragon.log dragonfly.log
+	rm -f *.o client server dragonfly.log

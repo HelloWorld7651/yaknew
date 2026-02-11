@@ -14,8 +14,9 @@ class Input : public df::TextEntry {
  private:
   df::TextBox *m_p_text_box;  // Text box for chat messages.
   std::string m_name;         // Name of chatter.
+  yakclient *m_p_client;      //pointer 
   
  public:
-  Input(std::string name, df::TextBox *p_text_box);
+  Input(std::string name, df::TextBox *p_text_box, yakclient *p_client);
   void callback() override;
 };

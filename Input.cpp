@@ -12,7 +12,7 @@
 // Game includes.
 #include "Input.h"
 
-Input::Input(std::string name, df::TextBox *p_text_box) {
+Input::Input(std::string name, df::TextBox *p_text_box, yakclient *p_client) {
   setType("Input");
   setText("");
   setBorder(true);
@@ -20,6 +20,7 @@ Input::Input(std::string name, df::TextBox *p_text_box) {
   setLocation(df::BOTTOM_CENTER);
   setLimit(40); // In characters
   m_p_text_box = p_text_box;
+  m_p_client = p_client;
   m_name = name + ": ";
   setViewString(m_name);
 }
@@ -31,6 +32,12 @@ void Input::callback() {
   if (getText() == "quit" || getText() == "exit")
     GM.setGameOver();
 
+  //send to server
+  std::string full_msg = m_name + getText();
+  m_p_client->sendMessage(full_msg);
+  //clear input
+  setText("");
+  /*
   // Add name to box.
   m_p_text_box -> addText(m_name);
 
@@ -42,4 +49,5 @@ void Input::callback() {
   
   // Clear for next entry.
   this -> clearText();
+  */
 }
