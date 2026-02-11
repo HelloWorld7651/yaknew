@@ -35,7 +35,7 @@ void Input::callback() {
     GM.setGameOver();
 
   //send to server
-  std::string full_msg = m_name + getText();
+  std::string full_msg = m_name+ getText();
   m_p_client->sendMessage(full_msg);
   //clear input
   setText("");

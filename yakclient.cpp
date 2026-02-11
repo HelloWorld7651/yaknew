@@ -2,6 +2,7 @@
 #include "NetworkManager.h"
 #include "EventNetwork.h"
 #include "LogManager.h"
+#include <string>
 /*
 #define yak_port "9876"
 #define message_size 1024
@@ -75,6 +76,8 @@ void yakclient::handleMessage(){
 
     //process message
     if(header.type == MessageType::CHAT){
+        //add a new line after each person
+        std::string message = std::string(buffer) + "\n";
         text_box -> addText(buffer);
     }
 }
