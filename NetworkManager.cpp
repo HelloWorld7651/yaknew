@@ -263,3 +263,6 @@ bool NetworkManager::isServer() const{
     return m_accept_sock != -1;
 }
 
+int NetworkManager::getNumConnections() const{
+    return m_sock.size();
+}

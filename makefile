@@ -1,8 +1,7 @@
 CC=g++
 CFLAGS= -g -std=c++17 -Wall 
-INCLUDES= -I../dragonfly/include -I/usr/local/include -I/opt/homebrew/include
-LDFLAGS= -L../dragonfly/lib -ldragonfly -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
-
+INCLUDES= -I../dragonfly/include -I../SFML-3.0.2/include
+LDFLAGS= -L../dragonfly/lib -L../SFML-3.0.2/lib -ldragonfly-arm64-mac -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -Wl,-rpath,../SFML-3.0.2/lib
 COMMON= EventNetwork.cpp NetworkManager.cpp Sentry.cpp 
 
 CLIENT_SRC= client.cpp Input.cpp NameEntry.cpp yakclient.cpp $(COMMON)
