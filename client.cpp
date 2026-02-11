@@ -7,6 +7,7 @@
 #include "GameManager.h"
 #include "LogManager.h"
 #include "NetworkManager.h"
+#include "Sentry.h"
 
 // Game includes.
 #include "NameEntry.h"
@@ -47,6 +48,8 @@ int main(int argc, char *argv[]) {
 
 // Create initial game objects.
 void populateWorld() {
+
+  new df::Sentry();
 
   // Get name.  NameEntry spawns others upon callback.
   NameEntry *p_n = new NameEntry();

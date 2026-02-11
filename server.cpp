@@ -2,6 +2,7 @@
 #include "GameManager.h"
 #include "LogManager.h"
 #include "yakserver.h"
+#include "Sentry.h"
 
 int main(int argc, char *argv[]) {
   if (GM.startUp()) {
@@ -9,6 +10,9 @@ int main(int argc, char *argv[]) {
   }
 
   LM.setFlush(true);
+
+//create sentry
+  new df::Sentry();
   
   // Instantiate the Server logic
   new yakserver();
