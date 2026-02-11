@@ -9,7 +9,7 @@ connect to host,get name/handle, get input from user, package it in message and 
 #include "TextBox.h"
 
 
-#define yak_port 9876
+#define yak_port "9876"
 #define message_size 1024
 enum class MessageType{
     UNDEFINED = -1, EXIT, CHAT

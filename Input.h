@@ -8,7 +8,7 @@
 // Engine includes.
 #include "TextBox.h"
 #include "TextEntry.h"
-
+class yakclient;
 class Input : public df::TextEntry {
 
  private:

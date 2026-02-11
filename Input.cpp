@@ -9,10 +9,10 @@
 #include "WorldManager.h"
 #include "yakclient.h"
 
+class yakclient;
 // Game includes.
 #include "Input.h"
 
-class yakclient;
 
 Input::Input(std::string name, df::TextBox *p_text_box, yakclient *p_client) {
   setType("Input");

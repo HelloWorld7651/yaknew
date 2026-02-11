@@ -42,7 +42,7 @@ void NameEntry::callback() {
 
   //pass client so input can see
   Input *p_in = new Input(getText(), p_t, p_client);  
-  p_in->setLocation(df::Vector(p_t->getPosition().getX(), p_t->getPosition().getY() + 8));
+  p_in->setPosition(df::Vector(p_t->getPosition().getX(), p_t->getPosition().getY() + 8));
   
   // Done.
   WM.markForDelete(this);

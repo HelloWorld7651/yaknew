@@ -2,13 +2,14 @@
 #include "NetworkManager.h"
 #include "EventNetwork.h"
 #include "LogManager.h"
-
+/*
 #define yak_port "9876"
 #define message_size 1024
+
 enum class MessageType{
     UNDEFINED = -1, EXIT, CHAT
 };
-
+*/
 struct PacketHeader{
     int size; // size of message
     MessageType type; //type of message
